@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background: #8360c3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2ebf91, #8360c3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2ebf91, #8360c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    overflow: hidden;
+
+}
+
+.body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Book */
+.book {
+    position: relative;
+    width: 350px;
+    height: 500px;
+    transition: transform 0.5s;
+}
+
+.paper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    perspective: 1500px;
+
+}
+
+.front,
+.back {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transition: transform 0.5s;
+}
+
+.front {
+    z-index: 1;
+    backface-visibility: hidden;
+    border-left: 3px solid powderblue;
+    border-radius: 0 5% 5% 0;
+}
+
+.back {
+    z-index: 0;
+    border-radius: 0 5% 5% 0;
+}
+
+.front-content,
+.back-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flipped .front{
+    z-index: 0;
+}
+
+.flipped .back{
+    z-index: 1;
+}
+
+.back-content {
+    transform: rotateY(180deg)
+}
+
+/* Paper flip effect */
+.flipped .front,
+.flipped .back {
+    transform: rotateY(-180deg);
+}
+
+/* Controller Buttons */
+button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 10px;
+    transition: transform 0.5s;
+}
+
+button:focus {
+    outline: none;
+}
+
+button:hover i {
+    color: #636363;
+}
+
+i {
+    font-size: 50px;
+    color: white;
+}
+
+/* Paper stack order */
+#p0 {
+    z-index: 6;
+}
+
+#p1 {
+    z-index: 5;
+}
+
+#p2 {
+    z-index: 4;
+}
+
+#p3 {
+    z-index: 3;
+}
+
+#p4 {
+    z-index: 2;
+}
+
+#p5 {
+    z-index: 1;
+}
+
+#p0 .front{
+    background-image: url("../images/font.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-left: none;
+}
+
+#b1 , #b2, #b3, #b4{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background: powderblue;
+    z-index: 1;
+    border-radius: 5% 0 0 5%;
+
+}
+
+#b1 h1, #b2 h1, #b3 h1, #b4 h1{
+    background: #2c3e50; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2c3e50, #3498db); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2c3e50, #3498db); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#b1 img, #b2 img, #b3 img, #b4 img{
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+.flipped .back div img {
+    box-shadow: 0 5px 15px #000;
+    transition: ease-in 0.5s;
+    transform: rotateZ(-10deg) translateY(-25px);
+}
+
+#f2, #f3, #f4, #f5 {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    background: #FFF8F3;
+    border-radius: 0 5% 5% 0;
+}
+
+#f1 video, #f2 video, #f3 video, #f4 video, #f5 video{
+    width: 100%;
+    height: 100%;
+    border-radius: 0 5% 5% 0;
+    object-fit: cover;
+}
+
+#f1 h1, #f2 h1, #f3 h1, #f4 h1, #f5 h1{
+    position: absolute;
+    top: 0;
+    margin-top: 5%;
+    display: none;
+}
+#p5 .back{
+    border-left: none;
+}
+
+#f0, #b5{
+    color: white;
+}
+
+#b5 {
+    background-image: url("../images/ack.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5% 0 0 5%;
+}
+
+#skipBtn{
+    font-size: 0.8rem;
+    letter-spacing: .125rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: "Lexend Deca", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    cursor: pointer;
+    background: #355C7D;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 10px;
+    border-radius: 10px;
+
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin: 30px;
+
+    animation: start 5s;
+}
+
+#skipBtn:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 700px){
+
+    .body {
+        rotate: 90deg;
+    }
+
+    .book {
+        height: 90vw;
+    }
+    
+}

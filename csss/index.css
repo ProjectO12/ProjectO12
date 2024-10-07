@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Style+Script&display=swap');
+
+*{
+	/* background-color: mediumpurple; */
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	background-color: black;
+	overflow: hidden;
+}
+
+body{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: sans-serif;
+}
+
+#bg{
+	width: 100vw;
+	height: 100vh;
+	margin:  0;
+    display: block;
+    cursor: default;
+    /* -webkit-touch-callout: none; */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container{
+	color: floralwhite;
+	text-align: center;
+	margin: 0 auto;
+	position: absolute;
+}
+
+@keyframes fade-down { 
+	0%{
+		opacity: 1;
+	}
+
+	100%{
+		opacity: 0;
+	}
+}
+
+.animateMe{
+	animation: fade-down 5s;
+}
+.headline{
+
+    cursor: default;
+    /* -webkit-touch-callout: none; */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.headline span {
+
+    cursor: default;
+    /* -webkit-touch-callout: none; */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	font-weight: normal;
+	font-size: 3.5rem;
+	letter-spacing: .125rem;
+	text-transform: uppercase;
+    color: #fff;
+
+	font-family: "Lexend Deca", sans-serif;
+  	font-optical-sizing: auto;
+  	font-weight: 600;
+  	font-style: normal;
+
+    display: inline-block;
+    animation: animate 10s ease infinite;
+
+}
+
+.headline span:nth-child(1){
+ animation-delay: 0s;
+
+}   
+.headline span:nth-child(2){
+animation-delay: 1s;
+
+}
+.headline span:nth-child(3){
+ animation-delay: 2s;
+
+}
+.headline span:nth-child(4){
+ animation-delay: 3s;
+}
+.headline span:nth-child(5){
+ animation-delay: 4s;
+}
+.headline span:nth-child(6){
+ animation-delay: 5s;
+
+}
+.headline span:nth-child(7){
+ animation-delay: 6s;
+}
+.headline span:nth-child(8){
+ animation-delay: 7s;
+}
+
+.headline span:nth-child(9){
+ animation-delay: 8s;
+}
+
+.headline span:nth-child(10){
+ animation-delay: 9s;
+}
+li{
+
+    cursor: default;
+    /* -webkit-touch-callout: none; */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	display: inline-block;
+	font-size: 1.5rem;
+	list-style-type: none;
+	padding: 1em;
+	text-transform: uppercase;
+}
+
+li span{
+	display: block;
+	font-size: 4.5rem;
+}
+
+#content{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+@keyframes animate{
+    0%,100%{
+        color: lightgoldenrodyellow;
+        filter: blur(1px);
+        text-shadow: 0 0 10px #FAEDCD,
+         0 0 20px #FEFAE0,
+          0 0 400px #E9EDC9,
+           0 0 80px #CCD5AE,
+            0 0 120px #F8CBA6,
+             0 0 200px #FFE7CC,
+              0 0 300px #FFFBEB,
+               0 0 400px #EDDBC7;
+    }
+
+    5%,95%{
+        color: #fff;
+        filter: blur(0px);
+        text-shadow: none;
+
+    }
+
+
+}
+
+.headline.type{
+	width: 100%;
+	padding-left: 10px;
+	white-space: nowrap;
+	letter-spacing: 5px;
+	overflow: hidden;
+	color: lightgoldenrodyellow;
+/* 	background:  linear-gradient(darkolivegreen, brown, darkviolet, orange, white, green);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent; */
+	text-shadow:
+	    0 0 5px #f3d0d7,
+	    0 0 18px #f3d0d7;
+	font-family: "Style Script", cursive;
+	font-weight: 600;
+	font-style: normal;
+	animation: 
+		typing 2s steps(28);
+}
+
+.proceed{
+	margin-top: 20px;
+	padding: 15px 35px;
+	border-radius: 25px;
+	background: #2b5876;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #4e4376, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #4e4376, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	box-shadow: #555;
+	border:  none;
+	color: white;
+	font-family: "Lexend Deca", sans-serif;
+  	font-optical-sizing: auto;
+  	font-size: 1rem;
+  	font-weight: 600;
+  	font-style: normal;
+  	display: none;
+  	cursor: pointer;
+  	box-shadow: 2px 2px 5px lightblue;
+}
+
+.proceed:hover{
+	box-shadow: none;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: #514b82;
+  border: 2px solid;
+  position: relative;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: currentColor;
+  animation: l6 15s;
+}
+
+@keyframes l6 {
+    100% {inset:0}
+}
+
+
+@keyframes fade-in {
+
+	0% {
+		opacity: 0;
+	}
+
+    100% {
+    	opacity: 1;
+    }
+}
+
+.fadeout.animate{
+	opacity: 0;
+	animation: fade-out 5s;
+}
+
+@keyframes fade-out{
+
+	0% {
+		opacity: 1;
+	}
+
+	100%{
+		opacity: 0;
+	}
+}
+
+@keyframes typing{
+
+	from {
+		width: 0;
+	}
+
+	1%,99%{
+		border-right: 2px solid;
+	}
+}
+
+/* @media screen and (max-width: 800px){
+
+	body{
+		rotate: 90deg;
+	}
+
+	.container {
+		font-size: 0.7rem;
+	}
+
+} */
+
+
+
+@media screen and (max-width: 600px){
+
+	html, body{
+		overflow: hidden;
+	}
+
+	#bg{
+		rotate: 90deg;
+		height: 100%;
+		width: 100vh;
+	}
+
+	.container{
+		rotate: 90deg;
+		height: 100vw;
+		width: auto;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		font-size: 0.7rem;
+	}
+
+
+}

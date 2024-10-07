@@ -1,0 +1,242 @@
+var songsList = '[]';
+
+// '{"title":"Despacito", "artist":"Justin", "image":"", "status": true, "src":"../videos/bad.mp3"}'
+
+var currentIndex = 0;
+
+const srcList = [];
+
+// Player 
+let progress = document.getElementById("progress"),
+    song = document.getElementById("songAudio"),
+    playerImg = document.getElementById("playerImg"),
+    playPause = document.getElementById("playPause"),
+    playPauseSymbol = document.getElementById("playPauseI"),
+    playNext = document.getElementById("playNext"),
+    playPrev = document.getElementById("playPrev"),
+    playerArtist = document.getElementById("playerArtist"),
+    playerTitle = document.getElementById("playerName");
+
+let exSong = "";
+
+song.onloadedmetadata = function() {
+    progress.max = song.duration;
+    progress.value = song.currentTime;
+}
+
+function PlayPause(){
+    if (playPause.classList.contains("play")) {
+        song.play();
+
+        setInterval(() => {
+            progress.value = song.currentTime;
+        }, 500);
+
+        playPause.classList.remove("play");
+        playPause.classList.add("pause");
+        playPauseSymbol.classList.remove("fi-sr-play");
+        playPauseSymbol.classList.add("fi-sr-pause");
+    }else{
+        song.pause();
+        playPause.classList.remove("pause");
+        playPause.classList.add("play");
+        playPauseSymbol.classList.remove("fi-sr-pause");
+        playPauseSymbol.classList.add("fi-sr-play");
+    }
+}
+
+progress.onchange = function(){
+
+    song.play();
+    song.currentTime = progress.value;
+
+    playPause.classList.remove("play");
+    playPause.classList.add("pause");
+    playPauseSymbol.classList.remove("fi-sr-play");
+    playPauseSymbol.classList.add("fi-sr-pause");
+
+}
+
+var parsed = JSON.parse(songsList);
+
+exSong = parsed[0].src;
+
+parsed.forEach(function (item){
+      srcList.push(item.src);
+      addProduct(item.title, item.artist, item.image, item.status, item.src);
+});
+
+defaultSong();
+
+function defaultSong(){
+
+    currentIndex = 0;
+
+    exSong = parsed[0].src;
+
+    song.src = parsed[0].src;
+
+    playerImg.src = parsed[0].image;
+    playerName.innerHTML = parsed[0].title;
+    playerArtist.innerHTML = parsed[0].artist;
+
+    song.onloadedmetadata = function() {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+    }
+
+    playPause.onclick = function(){
+        PlayPause();
+    }
+
+    playNext.onclick = function() {
+        PlayNext();
+    }
+
+
+    playPrev.onclick = function() {
+        PlayPrev();
+    }
+
+}
+
+function addProduct(title, artist, image, status, src) {
+
+  // add product
+  const list = document.querySelector('.songs_list');
+  const myLi = document.createElement('li');
+  myLi.setAttribute("id", src);
+  myLi.setAttribute("class", "song");
+
+  if (exSong == src) {
+      myLi.classList.add("selected");
+  }
+
+  myLi.onclick = function(){
+
+    if (exSong != src) {
+
+        song.src = src;
+
+        playerImg.src = image;
+
+        currentIndex = srcList.indexOf(src);
+
+        song.onloadedmetadata = function() {
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+        }
+
+        myLi.classList.add("selected");
+
+        if (exSong != "") {
+            document.getElementById(exSong).classList.remove("selected");
+        }
+        exSong = src;
+
+        playerImg.src = image;
+        playerName.innerHTML = title;
+        playerArtist.innerHTML = artist;
+
+        playPause.classList.remove("pause");
+        playPause.classList.add("play");
+        playPauseSymbol.classList.remove("fi-sr-pause");
+        playPauseSymbol.classList.add("fi-sr-play");
+        PlayPause();
+
+    }
+
+  }
+
+  const icon = document.createElement('span');
+  icon.innerHTML = "&#127925;"
+
+  if (status) {
+    icon.setAttribute("class", "active");
+  } else {
+    icon.setAttribute("class", "inactive");
+  }
+
+  const songImage = document.createElement('img');
+  songImage.setAttribute("class", "songImg");
+  songImage.setAttribute("src", image);
+
+  const songTitles = document.createElement('div');
+  songTitles.setAttribute("class", "songTitles");
+
+  const name = document.createElement('h2');
+  name.setAttribute("class", "songName");
+  name.setAttribute("id", "songName");
+  name.innerText = title;
+
+  const artistName = document.createElement('h5');
+  artistName.setAttribute("class", "songArtist");
+  artistName.setAttribute("id", "songArtist");
+  artistName.innerText = artist;
+
+  songTitles.appendChild(name);
+  songTitles.appendChild(artistName);
+
+  myLi.appendChild(songImage);
+  myLi.appendChild(songTitles);
+  myLi.appendChild(icon);
+
+
+
+  list.appendChild(myLi);
+}
+
+function PlayNext(){
+
+    if (currentIndex < (srcList.length-1)) {
+        currentIndex += 1;
+
+        PlayCurrentIndex(currentIndex);
+    }
+}
+
+function PlayPrev(){
+
+    if (currentIndex >= 1) {
+        currentIndex -= 1;
+
+        PlayCurrentIndex(currentIndex);
+    }   
+}
+
+
+function PlayCurrentIndex(index){
+
+    document.getElementById(exSong).classList.remove("selected");
+
+    exSong = parsed[index].src;
+
+    song.src = parsed[index].src;
+
+    document.getElementById(exSong).classList.add("selected");
+
+    playerImg.src = parsed[index].image;
+    playerName.innerHTML = parsed[index].title;
+    playerArtist.innerHTML = parsed[index].artist;
+
+    song.onloadedmetadata = function() {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+    }
+
+    playPause.classList.remove("pause");
+    playPause.classList.add("play");
+
+    playPauseSymbol.classList.remove("fi-sr-pause");
+    playPauseSymbol.classList.add("fi-sr-play");
+
+    PlayPause();
+    
+    playPause.onclick = function(){
+        PlayPause();
+    }
+}
+
+function SkipToNextSlide(){
+    location.replace("message.html");
+}
