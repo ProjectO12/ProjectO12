@@ -34,8 +34,8 @@ function randomInRange(min, max) {
 			proceed = document.getElementById("proceedToPresentation"),
 			content = document.getElementById("content");
 
-			// headline.innerText = "Happy Birthday\nCharan Cherry";
-			headline.innerText = "Hello\nWorld";
+			headline.innerText = "Happy Birthday\nIswarya Jasmine";
+			// headline.innerText = "Hello\nWorld";
 			
 			headline.style.fontSize = "450%";
 			headline.classList.add("type");
