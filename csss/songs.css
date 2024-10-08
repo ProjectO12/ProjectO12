@@ -345,4 +345,11 @@ body{
     	margin-right: 10%;
     	font-size: 10px;
 	}
+
+
+.songs_list::-webkit-scrollbar{
+	width: 15px;
+}
+
+	
 }
