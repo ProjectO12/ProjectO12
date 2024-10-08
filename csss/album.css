@@ -145,7 +145,7 @@ i {
 }
 
 #p0 .front{
-    background-image: url("../images/font.png");
+    background-image: url("../images/front.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -218,7 +218,7 @@ i {
 }
 
 #b5 {
-    background-image: url("../images/ack.png");
+    background-image: url("../images/back.png");
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
