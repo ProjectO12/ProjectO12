@@ -27,7 +27,6 @@ song.onloadedmetadata = function() {
 function PlayPause(){
     if (playPause.classList.contains("play")) {
         song.play();
-        alert(""+exSong+""+srcList[0]);
         setInterval(() => {
             progress.value = song.currentTime;
         }, 500);
