@@ -24,8 +24,8 @@ document.getElementById("skipBtn").onclick = function(){
 
 function openBook() {
     book.style.transform = "translateX(50%)";
-    prevBtn.style.transform = "translateX(-180px)";
-    nextBtn.style.transform = "translateX(180px)";
+    prevBtn.style.transform = "translateX(-130px)";
+    nextBtn.style.transform = "translateX(130px)";
 }
 
 function closeBook(isAtBeginning) {
