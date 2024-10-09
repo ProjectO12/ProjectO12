@@ -162,6 +162,7 @@ i {
     background: powderblue;
     z-index: 1;
     border-radius: 5% 0 0 5%;
+    border-right: 2px solid powderblue;
 
 }
 
@@ -215,6 +216,7 @@ i {
 
 #f0, #b5{
     color: white;
+    border: none;
 }
 
 #b5 {
