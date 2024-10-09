@@ -55,21 +55,21 @@ function goNextPage() {
             case 3:
                 paper2.classList.add("flipped");
                 paper2.style.zIndex = 3;
+                paper3.style.zIndex = 4;
                 document.querySelector("#f2 video").pause();
                 break;
             case 4:
                 paper3.classList.add("flipped");
-                paper3.style.zIndex = 4;
+                paper4.style.zIndex = 5;
                 document.querySelector("#f3 video").pause();
                 break;
             case 5:
                 paper4.classList.add("flipped");
-                paper4.style.zIndex = 5;
+                paper5.style.zIndex = 6;
                 document.querySelector("#f4 video").pause();
                 break;
             case 6:
                 paper5.classList.add("flipped");
-                paper5.style.zIndex = 6;
                 document.querySelector("#f5 video").pause();
                 closeBook(false);
                 break;
@@ -98,23 +98,23 @@ function goPrevPage() {
                 break;
             case 4:
                 paper2.classList.remove("flipped");
+                paper3.style.zIndex = 3;
                 paper2.style.zIndex = 4;
                 document.querySelector("#f3 video").pause();
                 break;
             case 5:
                 paper3.classList.remove("flipped");
-                paper3.style.zIndex = 3;
+                paper4.style.zIndex = 2;
                 document.querySelector("#f4 video").pause();
                 break;
             case 6:
                 paper4.classList.remove("flipped");
-                paper4.style.zIndex = 2;
+                paper5.style.zIndex = 1;
                 document.querySelector("#f5 video").pause();
                 break;
             case 7:
                 openBook();
                 paper5.classList.remove("flipped");
-                paper5.style.zIndex = 1;
                 break;
             default:
                 throw new Error("unkown state");
