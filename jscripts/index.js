@@ -10,7 +10,7 @@ function randomInRange(min, max) {
 
 	document.getElementById("container").style.width = "100vh";
 	
-	let bday = "October 10,2024 10:15:00",
+	let bday = "October 10,2024 10:25:00",
 	countdown = new Date(bday).getTime(),
 
 
