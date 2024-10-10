@@ -30,7 +30,7 @@ body {
 	overflow: hidden;
 }
 
-.content video{
+.content iframe{
 	width: 100%;
 	height: 100%;
   	animation: start 5s;
@@ -95,7 +95,7 @@ button:hover{
 		overflow: hidden;
 	}
 
-	.content video{
+	.content iframe{
 		opacity: 1;
 		rotate: 90deg;
 		width: 100vh;
