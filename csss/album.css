@@ -200,6 +200,7 @@ i {
 #f1 iframe, #f2 video, #f3 video, #f4 video, #f5 video{
     width: 100%;
     height: 100%;
+border: none;
     border-radius: 0 5% 5% 0;
     object-fit: cover;
 }
