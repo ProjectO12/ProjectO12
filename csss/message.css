@@ -97,7 +97,7 @@ a{
 
 @media screen and (max-width: 700px) {
 
-     .mainContainer{
+     body{
           padding: 5% 2%;
      }
 
