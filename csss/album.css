@@ -163,6 +163,10 @@ i {
     z-index: 1;
     border-radius: 5% 0 0 5%;
     border-right: 2px solid white;
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3DfVxZV531cnhywZmJfii-Z4qTZH94hSOSA&usqp=CAU");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 
 }
 
