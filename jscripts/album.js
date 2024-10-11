@@ -19,7 +19,14 @@ let currentLocation = 1;
 let numOfPapers = 6;
 let maxLocation = numOfPapers + 1;
 document.getElementById("skipBtn").onclick = function(){
-    location.replace("songs.html");
+let code = prompt("Enter Chaitra's Secret Code (or) Chaitra's Usual Nickname");
+let text;
+if (code == "😂" || code.trim().toLowerCase() == "cherry") {
+  	location.replace("songs.html");
+} else {
+  	alert("Incorrect!!. Try Reloading the page (or) Exit");
+}
+    
 }
 
 function openBook() {
