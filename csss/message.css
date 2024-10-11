@@ -94,3 +94,11 @@ a{
   	font-style: normal;
   	font-size: 1rem;
 }
+
+@media screen and (max-width: 700px) {
+
+     .mainContainer{
+          padding: 5% 2%;
+     }
+
+}
